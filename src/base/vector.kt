@@ -63,6 +63,15 @@ class Vec(val x: Double, val y: Double, val z: Double) {
         return r_out_perp + r_out_parallel;
     }
 
+    operator fun get(a: Int): Double {
+        return when(a) {
+            0 -> x
+            1 -> y
+            2 -> z
+            else -> throw RuntimeException("Index out of bounds ${a}.")
+        }
+    }
+
 }
 
 
